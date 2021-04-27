@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { movie, MoviesService } from '../movies-search/movies.service';
+import { movie, MoviesService } from '../movies.service';
 
 @Component({
   selector: 'app-movies-list',

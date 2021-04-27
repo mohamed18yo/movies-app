@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+
+const BACKEND_URL = environment.apiUrl
 export interface movie {
   Title: string;
   Year: string;
@@ -26,7 +29,7 @@ export class MoviesService {
   searchFetch(name: any) {
     return this.http
       .get<{ Search: movie }>(
-        'http://www.omdbapi.com/' + `?s=${name}` + '&apikey=5e23775'
+        BACKEND_URL + `?s=${name}` + '&apikey=5e23775'
       )
       .subscribe((res) => {
         // console.log(res.Search);
@@ -41,7 +44,7 @@ export class MoviesService {
   }
 
   getDetailesMovie(id: string) {
-    this.http.get('http://www.omdbapi.com/' + `?i=${id}` + '&apikey=5e23775').subscribe((res)=>{
+    this.http.get(BACKEND_URL + `?i=${id}` + '&apikey=5e23775').subscribe((res)=>{
       // console.log(res);
       this.detailes.next([res])
     })

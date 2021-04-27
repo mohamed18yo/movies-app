@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MoviesService } from 'src/app/movies/movies-search/movies.service';
+import { MoviesService } from 'src/app/movies/movies.service';
 @Component({
   selector: 'app-movies-search',
   templateUrl: './movies-search.component.html',
