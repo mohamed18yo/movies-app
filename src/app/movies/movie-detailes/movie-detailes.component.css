@@ -1,0 +1,20 @@
+mat-card{
+  width: 700px;
+  margin-top: 6rem;
+  /* margin: auto; */
+  margin-top: 2rem;
+}
+mat-spinner{
+  margin: auto;
+  margin-top: 10rem;
+  /*  */
+}
+img{
+  float: right;
+  margin-left: 1px;
+  height: 30rem;
+  width: 22rem;
+}
+span{
+  color: black;
+}

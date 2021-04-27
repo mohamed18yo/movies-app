@@ -1,0 +1,20 @@
+<section  fxLayout fxLayoutAlign="center">
+  <form
+    #searchForm="ngForm"
+    (ngSubmit)="onSubmit(searchForm)"
+    fxLayout
+    fxLayoutAlign="center"
+  >
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        placeholder="Search"
+        type="text"
+        required
+        name="word"
+        ngModel
+      />
+    </mat-form-field>
+  </form>
+</section>
+<router-outlet></router-outlet>

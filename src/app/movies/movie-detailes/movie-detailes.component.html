@@ -1,0 +1,47 @@
+<mat-spinner
+  fxLayoutAlign="center center"
+  *ngIf="isLoading"
+  color="accent"
+></mat-spinner>
+
+<mat-card class="example-card" *ngFor="let movie of detailes">
+  <div>
+    <img mat-card-image [src]="movie.Poster" [alt]="movie.Title" />
+  </div>
+
+  <div>
+    <mat-card-title>{{ movie.Title }} ( {{ movie.Year }} ) </mat-card-title>
+    <mat-card-subtitle
+      ><span>Released: </span> {{ movie.Released }}
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+      <span>Runtime: </span>{{ movie.Runtime }}
+    </mat-card-subtitle>
+    <mat-card-subtitle
+      ><span>Genre: </span> {{ movie.Genre }}
+    </mat-card-subtitle>
+    <!-- <mat-card-subtitle>{{movie.Plot}} </mat-card-subtitle> -->
+    <mat-card-subtitle
+      ><span>Director: </span> {{ movie.Director }}
+    </mat-card-subtitle>
+    <mat-card-subtitle
+      ><span>Writer: </span>{{ movie.Writer }}
+    </mat-card-subtitle>
+    <mat-card-subtitle
+      ><span>Actors: </span>{{ movie.Actors }}
+    </mat-card-subtitle>
+    <mat-card-subtitle
+      ><span>Language: </span>{{ movie.Language }}
+    </mat-card-subtitle>
+    <mat-card-subtitle
+      ><span>Country: </span>{{ movie.Country }}
+    </mat-card-subtitle>
+    <mat-card-subtitle
+      ><span>Awards: </span>{{ movie.Awards }}
+    </mat-card-subtitle>
+    <span>Ratings:</span>
+    <div *ngFor="let rate of movie.Ratings">
+      <mat-card-subtitle>{{ rate.Source }} {{ rate.Value }} </mat-card-subtitle>
+    </div>
+  </div>
+</mat-card>
