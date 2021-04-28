@@ -3,8 +3,8 @@
   *ngIf="isLoading"
   color="accent"
 ></mat-spinner>
-<!-- 100px:130px -->
-<mat-grid-list cols="4" rowHeight="2:3">
+<!-- 2:3 -->
+<mat-grid-list cols="4" rowHeight="100px:130px">
   <div *ngFor="let movie of movies">
     <a [routerLink]="['../detail', movie.imdbID]"
       ><mat-grid-tile style="background-image: url({{movie.Poster}});">
