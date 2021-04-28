@@ -27,10 +27,7 @@ export class MoviesListComponent implements OnInit ,OnDestroy{
       this.isLoading= false
     });
   }
-  onDetaile(id: string) {
-    // this.moviesService.getDetailesMovie(id);
-    // this.router.navigate(['../detail'], { relativeTo: this.route });
-  }
+
   ngOnDestroy(){
     this.resultSearchSubs.unsubscribe()
   }
