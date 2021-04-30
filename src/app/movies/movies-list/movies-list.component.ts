@@ -8,10 +8,10 @@ import { movie, MoviesService } from '../movies.service';
   templateUrl: './movies-list.component.html',
   styleUrls: ['./movies-list.component.css'],
 })
-export class MoviesListComponent implements OnInit ,OnDestroy{
+export class MoviesListComponent implements OnInit, OnDestroy {
   movies: movie;
-  isLoading= false
-  resultSearchSubs:Subscription
+  isLoading = false;
+  resultSearchSubs: Subscription;
   constructor(
     private moviesService: MoviesService,
     private router: Router,
@@ -19,16 +19,16 @@ export class MoviesListComponent implements OnInit ,OnDestroy{
   ) {}
 
   ngOnInit(): void {
-    this.isLoading= true
-   this.resultSearchSubs= this.moviesService.getResultSearch().subscribe((res) => {
-
-      this.movies = res;
-      // console.log(this.movies);
-      this.isLoading= false
-    });
+    this.isLoading = true;
+    this.resultSearchSubs = this.moviesService
+      .getResultSearch()
+      .subscribe((res) => {
+        this.movies = res;
+        this.isLoading = false;
+      });
   }
 
-  ngOnDestroy(){
-    this.resultSearchSubs.unsubscribe()
+  ngOnDestroy() {
+    this.resultSearchSubs.unsubscribe();
   }
 }

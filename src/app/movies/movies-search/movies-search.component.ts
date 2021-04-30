@@ -8,11 +8,15 @@ import { MoviesService } from 'src/app/movies/movies.service';
   styleUrls: ['./movies-search.component.css'],
 })
 export class MoviesSearchComponent implements OnInit {
+
   constructor(private moviesService: MoviesService, private router:Router, private route: ActivatedRoute) {}
   private searchResult:any
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
+
   onSubmit(form: NgForm) {
-    console.log(form.value.word);
+    // console.log(form.value.word);
     this.moviesService.searchFetch(form.value.word)
     this.router.navigate(['list'], { relativeTo: this.route });
   }
