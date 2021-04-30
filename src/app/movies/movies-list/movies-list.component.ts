@@ -17,14 +17,23 @@ export class MoviesListComponent implements OnInit, OnDestroy {
     private router: Router,
     private route: ActivatedRoute
   ) {}
-
+errorMsg=""
   ngOnInit(): void {
     this.isLoading = true;
+
     this.resultSearchSubs = this.moviesService
       .getResultSearch()
       .subscribe((res) => {
-        this.movies = res;
-        this.isLoading = false;
+        if(!res){
+          this.errorMsg=" No Result"
+          this.isLoading= false
+        }else{
+          this.movies = res;
+          this.isLoading = false;
+          this.errorMsg=""
+        }
+
+
       });
   }
 

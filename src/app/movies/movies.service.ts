@@ -27,12 +27,15 @@ export class MoviesService {
 
   searchFetch(name: any) {
     return this.http
-      .get<{ Search: movie }>(
+      .get<{ Search: movie, Response: string }>(
         BACKEND_URL + `?s=${name}` + '&apikey=5e23775'
       )
       .subscribe((res) => {
-        // console.log(res.Search);
-        this.searchResult.next(res.Search);
+        if(res.Response){
+          this.searchResult.next(res.Search);
+        }
+
+
       });
   }
   getResultSearch() {
